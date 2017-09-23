@@ -19,6 +19,14 @@ app.get('/', function (request, response) {
   response.sendFile(path.join(__dirname, '../src/index.html'));
 });
 
+app.get('/users', function (request, response) {
+  response.json([
+    {"id": 1, "firstName": "Matthew", "lastName": "Knight", "email": "matthew.knight@myob.com"},
+    {"id": 1, "firstName": "Fiona", "lastName": "Cook", "email": "fiona.cook@myob.com"},
+    {"id": 1, "firstName": "Dominic", "lastName": "Shelton", "email": "dominic.shelton@myob.com"}
+  ]);  
+});
+
 app.listen(port, function (err) {
   if (err) {
     console.log(err);
